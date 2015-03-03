@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    <title>Input Mask</title>
+</head>
+<body>
+    <input type="text" id="phone" maxlength="13"> 36dfd63dfd63df63df36
+    999 999-99-99
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+
+    function clearVal(val){
+        var newVal = val.replace(/[^\d]+/g, '') ;
+        if (newVal=='') {
+            return false;
+        }
+            else {
+                return newVal;
+            }
+
+    }
+
+        $(function(){
+            $('#phone') .keyup(function(){
+                var val = $(this).val();
+                if(val=='') return;
+
+                var newVal = clearVal(val);
+                if(!newVal) {
+                    $(this).val('');
+                    return;
+                }
+                $(this).val(newVal);
+                
+            });
+        });
+
+    </script>
+</body>
