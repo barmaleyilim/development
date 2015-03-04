@@ -38,10 +38,11 @@
 
         $(function(){
             $('#phone') .keyup(function(){
-                var val = $(this).val();
+                var val = $(this).val(), 
+                limit = 10;
                 if(val=='') return;
 
-                var newVal = clearVal(val);
+                var newVal = clearVal(val, limit);
                 if(!newVal) {
                     $(this).val('');
                     return;
