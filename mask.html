@@ -18,18 +18,22 @@
             else {
                 return newVal;
             }
-    function getResString (newVal) {
+    }        
+    function getResString(newVal){
         var res = '';
         for (var i = 0; i < newVal.length; i++) {
             if (i == 3) {
                 res += ' ';
                 res += newVal.charAt(i);
+            }else if (i == 6 || i == 8) {
+                res += '-';
+                res += newVal.charAt(i);
             }else {
-
+                res += newVal.charAt(i);
             }
         }
             return res;
-    }        
+    }       
     
 
         $(function(){
@@ -42,8 +46,8 @@
                     $(this).val('');
                     return;
                 }
-               var res = getResString (newVal); 
-               console.log(res);            
+               var res = getResString(newVal) 
+               $(this) . val(res);            
             });
         });
 
