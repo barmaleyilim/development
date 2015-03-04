@@ -18,8 +18,19 @@
             else {
                 return newVal;
             }
+    function getResString (newVal) {
+        var res = '';
+        for (var i = 0; i < newVal.length; i++) {
+            if (i == 3) {
+                res += ' ';
+                res += newVal.charAt(i);
+            }else {
 
-    }
+            }
+        }
+            return res;
+    }        
+    
 
         $(function(){
             $('#phone') .keyup(function(){
@@ -31,9 +42,8 @@
                     $(this).val('');
                     return;
                 }
-//                $(this).val(newVal);             
-//                $(this).val(newVal);                      
-//                $(this).val(newVal);                      
+               var res = getResString (newVal); 
+               console.log(res);            
             });
         });
 
