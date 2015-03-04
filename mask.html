@@ -36,12 +36,27 @@
     }       
     
 
+        // $(function(){
+        //     $('#phone') .keyup(function(){
+        //         var val = $(this).val(), 
+        //         limit = 10;
+        //         if(val=='') return;
+
+        //         var newVal = clearVal(val, limit);
+        //         if(!newVal) {
+        //             $(this).val('');
+        //             return;
+        //         }
+        //        var res = getResString(newVal) 
+        //        $(this) . val(res);            
+        //     });
+        // }); 
         $(function(){
-            $('#phone') .keyup(function(){
+            $('#phone') .on( 'input' ,  function(){
                 var val = $(this).val(), 
                 limit = 10;
                 if(val=='') return;
-
+                
                 var newVal = clearVal(val, limit);
                 if(!newVal) {
                     $(this).val('');
