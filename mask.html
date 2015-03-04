@@ -5,18 +5,18 @@
     <title>Input Mask</title>
 </head>
 <body>
-    <input type="text" id="phone" maxlength="13"> 36dfd63dfd63df63df36
+    <input type="text" id="phone"> 36dfd63dfd63df63df36
     999 999-99-99
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
 
-    function clearVal(val){
+    function clearVal(val, limit){
         var newVal = val.replace(/[^\d]+/g, '') ;
         if (newVal=='') {
             return false;
         }
             else {
-                return newVal;
+                return newVal.substring (0, limit);
             }
     }        
     function getResString(newVal){
