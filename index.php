@@ -223,16 +223,9 @@ relativeTo: 'viewport'
 </script>	  
 
 
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="/photo/templates/a4joomla-tillage-free/js/cookie.js" type="text/javascript"></script>
-<script src="/photo/templates/a4joomla-tillage-free/js/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
 
-<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
- 																									
+																							
 </head>
 <body>
 
@@ -329,8 +322,8 @@ relativeTo: 'viewport'
 		*/
 ?>
 
-<link rel="stylesheet" href="/photo/templates/a4joomla-tillage-free/css/header-dima.css" media="screen">	
-
+<!-- <link rel="stylesheet" href="/photo/templates/a4joomla-tillage-free/css/header-dima.css" media="screen">	
+ -->
 <!--<div id="hdr"> 
       <div id="logo1" class="gainlayout">
          	<h2><a href="http://galleryua.com/photo/" title="Достопримечательности Украины">Достопримечательности Украины</a></h2>
@@ -343,10 +336,10 @@ relativeTo: 'viewport'
 
 </div>-->
 
-<link rel="stylesheet" href="/sela/Panoramio/slider-oleg/css/afwslider.css" media="screen">	
+<!-- <link rel="stylesheet" href="/sela/Panoramio/slider-oleg/css/afwslider.css" media="screen">	
 <script src="/sela/Panoramio/slider-oleg/script/jquery-1.10.2.min.js"></script>
 <script src="/sela/Panoramio/slider-oleg/script/afwslider.js"></script>
-
+ -->
 <!-- begin slider 
 	<div id="sld">
 		
@@ -654,7 +647,7 @@ relativeTo: 'viewport'
 
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-<!--<div id="header" class="gainlayout">   -->
+<div id="header" class="gainlayout">   
 <div style="height:10px;">
 	  <div >
         <?php if($this->countModules('login')) : ?>
