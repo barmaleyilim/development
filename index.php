@@ -1,4 +1,4 @@
-﻿<?php // no direct access 
+<?php // no direct access 
 /**
  * @package                Template for joomla
  * @copyright        Copyright (C) 2012 a4joomla.com
@@ -80,6 +80,40 @@ JHTML::_('behavior.framework', true);
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/grey.css" type="text/css" />
+
+<!-- ======================================================================================================================================================== -->
+
+<!-- Slider CSS -->
+    <link type="text/css" rel="stylesheet" href="/photo/templates/a4joomla-tillage-free/css/slider.css" media="all">
+    <link type="text/css" rel="stylesheet" href="/photo/templates/a4joomla-tillage-free/css/common.css" media="all">
+<!-- Slider&Menu -->
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/photo/templates/a4joomla-tillage-free/js/js.js"></script>
+    <script type="text/javascript" src="/photo/templates/a4joomla-tillage-free/js/scroll.js"></script>
+    <script type="text/javascript" src="/photo/templates/a4joomla-tillage-free/js/common.js"></script>
+    <!--Script for thumbinals of slider-->
+<script  type="text/javascript">
+  (function($){
+    $(document).ready(function() {
+      $('[id^=carousel-selector-]').click( function(){
+        var id_selector = $(this).attr("id");
+        var id = id_selector.substr(id_selector.length -1);
+        id = parseInt(id);
+        $('#carousel-testimonial').carousel(id);
+      });
+
+      $('#carousel-testimonial').on('slid.bs.carousel', function (e) {
+        var id = $('.item.active').data('slide-number');
+        id = parseInt(id);
+        $('[id^=carousel-selector-]').removeClass('selected');
+        $('[id^=carousel-selector-'+id+']').addClass('selected');        
+      });
+    });
+  })(jQuery);
+</script> 
+
+<!-- ======================================================================================================================================================== -->
+
 <!--[if IE 6]>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/ie6.css" type="text/css" />
 <style type="text/css">
@@ -297,7 +331,7 @@ relativeTo: 'viewport'
 
 <link rel="stylesheet" href="/photo/templates/a4joomla-tillage-free/css/header-dima.css" media="screen">	
 
-<div id="hdr">
+<!--<div id="hdr"> 
       <div id="logo1" class="gainlayout">
          	<h2><a href="http://galleryua.com/photo/" title="Достопримечательности Украины">Достопримечательности Украины</a></h2>
 			<h3>Путешествуйте с нами!</h3> 
@@ -307,13 +341,13 @@ relativeTo: 'viewport'
       </div>
       <div class="clr"></div>
 
-</div>
+</div>-->
 
 <link rel="stylesheet" href="/sela/Panoramio/slider-oleg/css/afwslider.css" media="screen">	
 <script src="/sela/Panoramio/slider-oleg/script/jquery-1.10.2.min.js"></script>
 <script src="/sela/Panoramio/slider-oleg/script/afwslider.js"></script>
 
-<!-- begin slider -->
+<!-- begin slider 
 	<div id="sld">
 		
 		<img 
@@ -397,8 +431,226 @@ relativeTo: 'viewport'
 		
 		<ul></ul>
 	</div>
-<!-- end slider -->
+ end slider -->
+<!-- New Menu&Slider -->
+<!--Start NavBar-->
+<header data-id="navbar" role="banner" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+        <a class="logo pull-left" href="#" title="Home"><img src="/photo/templates/a4joomla-tillage-free/img/vs_logo.png" alt="Home"></a>
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <!--Links menu-->
+    </div>
+        <div class="navbar-collapse collapse  ">
+            <nav role="navigation">
+             <ul class="menu nav navbar-nav">
+                 <li class="first leaf menu-item-scribeys"><a href="#" title="">title one</a></li>
+                 <li class="leaf menu-item-scribewall"><a href="#" title="">title two</a></li>
+                 <li class="leaf menu-item-help"><a href="#" title="">title three</a></li>
+                 <li class="leaf menu-item-freetrial"><a href="#" title="">title four</a></li>
+                 <li class="leaf menu-item-pricing"><a href="#" title="">title five</a></li>
+                 <li class="last leaf menu-item-account"><a href="#" title="">title six</a></li>
+             </ul>        
+            </nav>
+        </div>
+    <!--Links menu in mobile mode-->
+    <div class="mobile-menu">
+          <div class="menu-main mobile-menu-wrap primary-menu">
+            <ul class="menu nav navbar-nav">
+                <li class="first leaf menu-item-scribeys"><a href="#" title="">mtitle one</a></li>
+                <li class="leaf menu-item-scribewall"><a href="#" title="">mtitle two</a></li>
+                <li class="leaf menu-item-help"><a href="#" title="">mtitle three</a></li>
+                <li class="leaf menu-item-freetrial"><a href="#" title="">mtitle four</a></li>
+                <li class="leaf menu-item-pricing"><a href="#" title="">mtitle five</a></li>
+                <li class="last leaf menu-item-account"><a href="#" title="">mtitle six</a></li>
+            </ul>        
+          </div>
+    <!--Links social-->
+      <div class="menu-social mobile-menu-wrap">
+        <ul class="menu nav">
+          <li><a href="https://www.facebook.com/#" class="icon-social icon-facebook" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/#" class="icon-social icon-twitter" target="_blank">Twitter</a></li>
+          <li><a href="https://www.youtube.com/user/#" class="icon-social icon-youtube" target="_blank">YouTube</a></li>
+          <li><a href="https://plus.google.com/#/" class="icon-social icon-gplus" target="_blank">Google+</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<!--End NavBar-->
+<!--Start Slide-->
+<div class="panel-pane pane-node" id="quote-carousel">
+  <div class="container-fluid" style="position:relative;">
+    <div class="row">
+      <div id="carousel-testimonial" class="carousel slide">    
+        <div class="carousel-inner">
+          <div class="item item-one active" data-slide-number="0">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
 
+          <div class="item item-two" data-slide-number="1">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="item item-three" data-slide-number="2">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="item item-four quote-right" data-slide-number="3">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item item-five quote-right" data-slide-number="4">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item item-six quote-right" data-slide-number="5">
+              <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+              </div>
+          </div>
+
+          <div class="item item-eight quote-right" data-slide-number="6">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item item-nine quote-right" data-slide-number="7">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="item item-ten quote-right" data-slide-number="8">
+            <div class="carousel-caption  quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div>
+
+          <div class="item item-seven quote-right" data-slide-number="9">
+            <div class="carousel-caption quote-white-text">
+              <blockquote>"Maecenas in rutrum felis. Nullam lorem metus, rutrum."</blockquote>
+              <div class="name">
+                <small>Duis eget leo, <a href="#">Vivamus lorem</a></small>
+              </div>
+            </div>
+          </div> 
+
+        </div>
+             
+        <a class="left carousel-control" href="#carousel-testimonial" data-slide="prev">
+          <span class="carousel-arrow carousel-arrow-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-testimonial" data-slide="next">
+          <span class="carousel-arrow carousel-arrow-right"></span>
+        </a>
+      </div>
+  </div>
+
+  <div class="carousel-cta">
+
+<!-- List of thumbnails -->
+    <div class="col-md-12" id="slider-thumbs">        
+      <ul class="list-inline carousel-thumb-list">
+          <li>
+            <a id="carousel-selector-0" class="selected">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/1_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-1">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/2_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-2">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/3_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-3">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/4_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-4">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/5_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-5">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/6_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-6">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/7_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-7">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/8_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-8">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/9_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+          <li>
+            <a id="carousel-selector-9">
+              <img src="/photo/templates/a4joomla-tillage-free/slides/10_photo_thumb.jpg" class="img-responsive" alt="">
+            </a>
+          </li>
+      </ul>        
+    </div>
+  </div>
+</div>
+ </div>
+<!--End of Slide-->
 
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -632,6 +884,6 @@ $(document).ready(function(){
 		</div>
 <!---->
 <script src="/photo/templates/a4joomla-tillage-free/js/tabs.js" type="text/javascript"></script>
-
+   
 </body>
 </html>
